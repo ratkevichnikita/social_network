@@ -1,0 +1,31 @@
+.post {
+    padding: 10px 30px 0 10px;
+}
+
+.post textarea {
+    width: 98%;
+    min-height: 150px;
+    padding: 10px;
+    resize: none;
+    background-color: lightgray;
+    color: #fff;
+}
+
+.button {
+    margin-left: auto;
+    display: block;
+    outline: none;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    background-color: forestgreen;
+    border: 1px solid transparent;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: forestgreen;
+    border: 1px solid;
+}

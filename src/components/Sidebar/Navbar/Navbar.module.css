@@ -1,0 +1,13 @@
+
+.item {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.item.active {
+    color: cornflowerblue;
+}
+
+.item:hover {
+    color: red;
+}

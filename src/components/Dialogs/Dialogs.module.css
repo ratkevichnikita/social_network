@@ -1,0 +1,106 @@
+.dialogs {
+  padding: 0px 10px 10px;
+}
+
+.dialogsInner {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  margin-top: 20px;
+}
+
+.dialogsList {
+  border-right: 2px solid gray;
+}
+
+.dialogsList h3 {
+  text-transform: uppercase;
+}
+
+.dialogsItem {
+  margin-bottom: 20px;
+  line-height: 1.5em;
+  color: gray;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dialogsItem:hover {
+  font-weight: 700;
+}
+
+.dialogsItem.active {
+  font-size: 30px;
+}
+
+.dialogsItem:before {
+  content: '\2022';
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 24px;
+  vertical-align: top;
+}
+
+.messages {
+  color: dodgerblue;
+}
+
+.messagesWrapper {
+  padding-left: 50px;
+}
+
+.messagesItem {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.messagesUser p {
+  text-align: center;
+}
+
+.messagesImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: dodgerblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messagesText {
+  font-size: 18px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.enterMessage {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid #000;
+  margin-top: 30px;
+  border-radius: 10px;
+  resize: none;
+}
+
+.enterMessage:focus {
+  outline: none;
+}
+
+.messagesBtn {
+  margin-left: auto;
+  display: block;
+  outline: none;
+  width: 200px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  background-color: forestgreen;
+  border: 1px solid transparent;
+}

@@ -1,0 +1,12 @@
+.name {
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 auto;
+}
