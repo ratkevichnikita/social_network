@@ -1,12 +1,25 @@
+import * as React from "react";
+
 import classes from './Dialogs.module.css';
 
 import DialogsItem from './DialogsItem/DialogsItem';
 import Message from './Mesage/Message';
 
-const Dialogs = (props) => {
 
-  let dialogsElements = props.state.dialogsData.map(d => <DialogsItem key={d.id} id={d.id} name={d.name}/>);
-  let messagesElements = props.state.messages.map(m => <Message key={m.id} name={m.name} text={m.text}/>);
+const Dialogs = (props) => {
+  let dialogsElements = props.dialogsData.map(d => <DialogsItem key={d.id} id={d.id} name={d.name}/>);
+  let messagesElements = props.messages.map(m => <Message key={m.id} name={m.name} text={m.text}/>);
+
+  let enterMessage = React.createRef();
+
+  let onAddMessage = () => {
+    props.addMessage()
+  }
+
+  let onPrintNewMessage = () => {
+    let txt = enterMessage.current.value;
+    props.printNewMessage(txt);
+  }
 
   return (
     <div className={classes.dialogs}>
@@ -19,8 +32,8 @@ const Dialogs = (props) => {
           <ul className={classes.messages}>
             {messagesElements}
           </ul>
-          <textarea placeholder='Введите сообщение' className={classes.enterMessage} cols="3" rows="3"></textarea>
-          <button className={classes.messagesBtn}>Отправить</button>
+          <textarea ref={enterMessage} onChange={onPrintNewMessage} value={props.enterMessage} className={classes.enterMessage} />
+          <button className={classes.messagesBtn} onClick={onAddMessage} >Отправить</button>
         </div>
       </div>
     </div>

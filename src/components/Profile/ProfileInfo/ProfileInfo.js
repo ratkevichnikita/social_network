@@ -1,10 +1,12 @@
 import classes from './Profile.module.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
   return (
       <div className={classes.user}>
-        <img src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt=""/>
-        +desc
+        <img src={props.profile.photos.small} alt=""/>
+        <p>
+          {props.profile.fullName}
+        </p>
       </div>
   );
 };

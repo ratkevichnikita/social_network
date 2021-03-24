@@ -1,0 +1,89 @@
+.usersList {
+  padding-left: 30px;
+}
+
+.usersInner {
+  display: grid;
+  grid-template-areas: "wrapper content";
+  grid-template-columns: 2fr 5fr 2fr;
+}
+
+.usersItem {
+  margin-bottom: 60px;
+}
+
+.usersTitle {
+  font-weight: 700;
+}
+
+.usersImg {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: grey;
+  margin-bottom: 10px;
+}
+
+.usersBtn {
+  border: none;
+  outline: none;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  background-color: forestgreen;
+}
+
+.userImgWrapper {
+  grid-area: wrapper;
+}
+
+.usersContent {
+  grid-area: content;
+  display: grid;
+  grid-template-areas: "box1 box2";
+  grid-template-columns: 2fr 2fr;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.box1 {
+  grid-area: box1;
+  display: grid;
+  grid-template-rows: 100px 20px;
+}
+
+.box2 {
+  grid-area: box2;
+  text-align: right;
+}
+
+.box2 span {
+  display: block;
+  font-weight: 700;
+
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pageItem {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.pageItem:hover {
+    color: forestgreen;
+}
+
+.currentPage {
+    color: forestgreen;
+}
+
+
+

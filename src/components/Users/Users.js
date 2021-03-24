@@ -1,0 +1,72 @@
+import classes from "./user.module.css";
+import userPhotoDefault from "./images/user.png";
+
+
+let Users = (props) => {
+
+  let paginationNumers = Math.ceil(props.paginationTotalUsers / props.paginationTotalCount);
+  let allPages = [];
+  for(let i = 1; i < paginationNumers; i++) {
+    allPages.push(i)
+  }
+
+
+  return (
+    <div>
+
+      <ul className={classes.usersList}>
+        {
+          props.users.map(u => (
+            <li key={u.id} className={classes.usersItem}>
+              <div className={classes.usersInner}>
+                <div className={classes.userImgWrapper}>
+                  <div className={classes.usersImg}>
+                    <img src={u.photos.small !== null ? u.photos.small : userPhotoDefault}
+                         alt="изображение пользователя"/>
+                  </div>
+
+                  {u.followed
+
+                    ? <button onClick={() => {
+                      props.unfollow(u.id)
+                    }} className={classes.usersBtn}>Отписаться</button>
+                    : <button onClick={() => {
+                      props.follow(u.id)
+                    }} className={classes.usersBtn}>Подписаться</button>
+                  }
+
+                </div>
+                <div className={classes.usersContent}>
+                  <div className={classes.box1}>
+                    <p className={classes.usersTitle}>{u.name}</p>
+                    <p className={classes.usersStatus}>{u.status}</p>
+                  </div>
+                  <div className={classes.box2}>
+                    <p>
+                      <span className={classes.usersCountry}>{'u.location.country'}</span>
+                      <span className={classes.usersTown}>{'u.location.town'}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul className={classes.pagination}>
+        {
+          allPages.map(item => {
+            return  <li key={item} onClick={()=> {props.switchPagination(item)} } className={`${classes.pageItem} ${item === props.paginationCurrentPage ? classes.currentPage : ''}`}>
+              {item}
+
+            </li>
+          })
+        }
+
+      </ul>
+    </div>
+  )
+}
+
+export default Users;

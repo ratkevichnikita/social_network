@@ -1,13 +1,10 @@
-import Navbar from './Navbar/Navbar';
-
 import classes from './Sidebar.module.css'
-import Friends from './Friends/Friends';
+import SidebarContainer from "./SidebarContainer";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
-      <Navbar />
-      <Friends friendsData={props.state.friendsData} />
+     <SidebarContainer />
     </div>
   )
 }

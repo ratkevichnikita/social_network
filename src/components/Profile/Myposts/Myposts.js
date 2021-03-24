@@ -5,7 +5,7 @@ import Post from './Post/Post';
 
 const Myposts = (props) => {
 
-  let postsElements = props.store.profilePage.postsData.map(p => <Post key={p.id} message={p.message} likes={p.likes}/>);
+  let postsElements = props.postsData.map(p => <Post key={p.id} message={p.message} likes={p.likes}/>);
 
   let clickOnButton = React.createRef();
 
