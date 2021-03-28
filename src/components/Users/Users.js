@@ -1,5 +1,6 @@
 import classes from "./user.module.css";
 import userPhotoDefault from "./images/user.png";
+import {NavLink} from "react-router-dom";
 
 
 let Users = (props) => {
@@ -18,6 +19,7 @@ let Users = (props) => {
         {
           props.users.map(u => (
             <li key={u.id} className={classes.usersItem}>
+              <NavLink to={`profile/`+u.id} >
               <div className={classes.usersInner}>
                 <div className={classes.userImgWrapper}>
                   <div className={classes.usersImg}>
@@ -49,6 +51,7 @@ let Users = (props) => {
                   </div>
                 </div>
               </div>
+              </NavLink>
             </li>
           ))
         }
