@@ -12,6 +12,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 import {BrowserRouter} from 'react-router-dom';
 import {Route} from 'react-router-dom';
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 
@@ -20,7 +21,7 @@ const App = () => {
 
       <BrowserRouter>
         <div className="app-wrapper">
-          <Header/>
+          <HeaderContainer />
           <Sidebar />
           <div className="app-wrapper-content">
             <Route path='/profile/:userId?' render={() => <ProfileContainer /> } />
