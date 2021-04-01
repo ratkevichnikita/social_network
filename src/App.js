@@ -3,8 +3,8 @@ import './App.css';
 
 // components - start
 import ProfileContainer from "./components/Profile/ProfileContainer";
-import Header from './components/Header/Header';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import News from './components/News/News';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -12,7 +12,6 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 import {BrowserRouter} from 'react-router-dom';
 import {Route} from 'react-router-dom';
-import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 

@@ -37,6 +37,10 @@
   background-color: forestgreen;
 }
 
+.usersBtn[disabled] {
+  opacity: 0.5;
+}
+
 .userImgWrapper {
   grid-area: wrapper;
 }

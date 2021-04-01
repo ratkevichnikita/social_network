@@ -1,7 +1,7 @@
 import classes from "./user.module.css";
 import userPhotoDefault from "./images/user.png";
 import {NavLink} from "react-router-dom";
-
+import {usersAPI as UsersAPI} from "../../api/api";
 
 let Users = (props) => {
 
@@ -11,7 +11,6 @@ let Users = (props) => {
     allPages.push(i)
   }
 
-
   return (
     <div>
 
@@ -19,21 +18,35 @@ let Users = (props) => {
         {
           props.users.map(u => (
             <li key={u.id} className={classes.usersItem}>
-              <NavLink to={`profile/`+u.id} >
+
               <div className={classes.usersInner}>
                 <div className={classes.userImgWrapper}>
-                  <div className={classes.usersImg}>
-                    <img src={u.photos.small !== null ? u.photos.small : userPhotoDefault}
-                         alt="изображение пользователя"/>
-                  </div>
-
+                  <NavLink to={`profile/`+u.id} >
+                    <div className={classes.usersImg}>
+                      <img src={u.photos.small !== null ? u.photos.small : userPhotoDefault}
+                           alt="изображение пользователя"/>
+                    </div>
+                  </NavLink>
                   {u.followed
 
-                    ? <button onClick={() => {
-                      props.unfollow(u.id)
+                    ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+
+                      props.isFollowingInProgressToggle(true, u.id)
+                     UsersAPI.unFollow(u.id).then(data => {
+                        if(data.resultCode === 0)   props.unfollow(u.id)
+                       props.isFollowingInProgressToggle(false, u.id)
+                      })
+
+
                     }} className={classes.usersBtn}>Отписаться</button>
-                    : <button onClick={() => {
-                      props.follow(u.id)
+                    : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+
+                      props.isFollowingInProgressToggle(true, u.id)
+                      UsersAPI.follow(u.id).then(data => {
+                        if(data.resultCode === 0)  props.follow(u.id)
+                        props.isFollowingInProgressToggle(false, u.id)
+                      })
+
                     }} className={classes.usersBtn}>Подписаться</button>
                   }
 
@@ -51,7 +64,7 @@ let Users = (props) => {
                   </div>
                 </div>
               </div>
-              </NavLink>
+
             </li>
           ))
         }
