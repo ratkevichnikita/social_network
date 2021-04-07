@@ -31,21 +31,24 @@ let Users = (props) => {
 
                     ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
 
-                      props.isFollowingInProgressToggle(true, u.id)
-                     UsersAPI.unFollow(u.id).then(data => {
-                        if(data.resultCode === 0)   props.unfollow(u.id)
-                       props.isFollowingInProgressToggle(false, u.id)
-                      })
+                      props.isFollow(u.id)
+                     //  props.isFollowingInProgressToggle(true, u.id)
+                     // UsersAPI.unFollow(u.id).then(data => {
+                     //    if(data.resultCode === 0)   props.unfollow(u.id)
+                     //   props.isFollowingInProgressToggle(false, u.id)
+                     //  })
 
 
                     }} className={classes.usersBtn}>Отписаться</button>
                     : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
 
-                      props.isFollowingInProgressToggle(true, u.id)
-                      UsersAPI.follow(u.id).then(data => {
-                        if(data.resultCode === 0)  props.follow(u.id)
-                        props.isFollowingInProgressToggle(false, u.id)
-                      })
+
+                      props.isUnFollow(u.id)
+                      // props.isFollowingInProgressToggle(true, u.id)
+                      // UsersAPI.follow(u.id).then(data => {
+                      //   if(data.resultCode === 0)  props.follow(u.id)
+                      //   props.isFollowingInProgressToggle(false, u.id)
+                      // })
 
                     }} className={classes.usersBtn}>Подписаться</button>
                   }

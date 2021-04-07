@@ -8,6 +8,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import News from './components/News/News';
 import Sidebar from './components/Sidebar/Sidebar';
+import Login from "./components/Login/Login";
 // components - end
 
 import {BrowserRouter} from 'react-router-dom';
@@ -27,6 +28,7 @@ const App = () => {
             <Route path='/dialogs' render={() => <DialogsContainer /> } />
             <Route path='/users' render={() => <UsersContainer /> } />
             <Route path='/news' component={News} />
+            <Route path='/login' render={() => <Login />} />
           </div>
         </div>
       </BrowserRouter>

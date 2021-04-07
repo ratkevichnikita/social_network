@@ -15,7 +15,7 @@ const Profile = (props) => {
       <img
         src="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg"
         alt=""/>
-      <ProfileInfo profile={props.profile} />
+      <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
       <MyPostsContainer />
     </div>
   );
