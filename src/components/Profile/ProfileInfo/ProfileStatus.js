@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class ProfileStatus extends Component {
+class ProfileStatus extends React.Component {
 
  state = {
    editMode: false,
@@ -14,6 +14,7 @@ class ProfileStatus extends Component {
  }
 
   deActivateEditMode = () => {
+
     this.setState({
       editMode: false,
     })
@@ -32,7 +33,7 @@ class ProfileStatus extends Component {
       <div>
         {!this.state.editMode && (
           <div>
-            <span onClick={this.activateEditMode} >{this.props.status || '--'}</span>
+            <span onClick={this.activateEditMode} > {this.props.status || '--'} </span>
           </div>
         ) }
         {this.state.editMode && (
